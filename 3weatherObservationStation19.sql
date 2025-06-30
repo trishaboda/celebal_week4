@@ -1,0 +1,1 @@
+WITH ab AS ( SELECT MIN(LAT_N) AS a, MIN(LONG_W) AS b, MAX(LAT_N) AS c, MAX(LONG_W) AS d FROM STATION ) SELECT CAST( SQRT(POWER(c - a, 2) + POWER(d - b, 2)) AS DECIMAL(18,4) ) AS euclidean_distance FROM ab;
